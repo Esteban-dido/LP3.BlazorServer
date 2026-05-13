@@ -1,6 +1,6 @@
-using MiProyectoAcademico.Domain.Enums;
+using LP3.Domain.Enums;
 
-namespace MiProyectoAcademico.Domain.Entities;
+namespace LP3.Domain.Entities;
 
 public class Estudiante
 {

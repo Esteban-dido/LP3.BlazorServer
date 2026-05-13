@@ -1,4 +1,4 @@
-namespace MiProyectoAcademico.Shared.DTOs;
+namespace LP3.Shared.DTOs;
 
 /// <summary>DTO para mostrar estudiantes en listados.</summary>
 public class EstudianteDto

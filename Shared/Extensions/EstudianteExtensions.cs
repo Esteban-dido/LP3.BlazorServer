@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
-using MiProyectoAcademico.Domain.Constants;
-using MiProyectoAcademico.Domain.Enums;
+using LP3.Domain.Constants;
+using LP3.Domain.Enums;
 
 public class EstudianteFormDto
 {
