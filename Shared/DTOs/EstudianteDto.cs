@@ -1,3 +1,5 @@
+using LP3.BlazorServer.Domain.Enums;
+
 namespace LP3.Shared.DTOs;
 
 /// <summary>DTO para mostrar estudiantes en listados.</summary>
@@ -21,9 +23,4 @@ public class EstudianteFormDto
 #pragma warning disable CS8601 // Posible asignación de referencia nula
     public EstadoEstudiante Estado { get; set; } = EstadoEstudiante.Activo;
 #pragma warning restore CS8601 // Posible asignación de referencia nula
-}
-
-public class EstadoEstudiante
-{
-    public static EstadoEstudiante? Activo { get; internal set; }
 }

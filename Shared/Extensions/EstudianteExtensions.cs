@@ -1,26 +1,29 @@
-using System.ComponentModel.DataAnnotations;
-using LP3.Domain.Constants;
-using LP3.Domain.Enums;
+namespace LP3.BlazorServer.Shared.Extensions;
+using LP3.BlazorServer.Domain.Entities;
+using LP3.Shared.DTOs;
 
-public class EstudianteFormDto
+/// <summary>
+/// Métodos de conversión entre Entidad y DTO.
+/// </summary>
+public static class EstudianteExtensions
 {
-    public int? Id { get; set; }
+    public static EstudianteDto ToDto(this Estudiante e)
+        => new()
+        {
+            Id        = e.Id,
+            Nombre    = e.Nombre,
+            Apellido  = e.Apellido,
+            Matricula = e.Matricula,
+            Estado    = e.Estado.ToString()
+        };
 
-    [Required(ErrorMessage = ReglasDominio.ErrorNombreRequerido)]
-    [MaxLength(ReglasDominio.NombreMaxLongitud)]
-    public string Nombre { get; set; } = string.Empty;
-
-    [Required]
-    [MaxLength(80)]
-    public string Apellido { get; set; } = string.Empty;
-
-    [Required]
-    [MaxLength(ReglasDominio.MatriculaMaxLongitud)]
-    public string Matricula { get; set; } = string.Empty;
-
-    [Required]
-    [EmailAddress(ErrorMessage = ReglasDominio.ErrorEmailInvalido)]
-    public string Email { get; set; } = string.Empty;
-
-    public EstadoEstudiante Estado { get; set; } = EstadoEstudiante.Activo;
+    public static Estudiante ToEntity(this EstudianteFormDto dto)
+        => new()
+        {
+            Nombre    = dto.Nombre,
+            Apellido  = dto.Apellido,
+            Matricula = dto.Matricula,
+            Email     = dto.Email,
+            Estado    = dto.Estado
+        };
 }
