@@ -10,6 +10,7 @@ public class EstudianteDto
     public string Apellido { get; set; } = string.Empty;
     public string Matricula { get; set; } = string.Empty;
     public string Estado   { get; set; } = string.Empty;
+    
 }
 
 /// <summary>DTO para crear o editar un estudiante.</summary>
